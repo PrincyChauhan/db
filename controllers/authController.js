@@ -76,8 +76,20 @@ const userLogin = catchAsync(async (req, res) => {
 
 });
 
+
+const userLogout = catchAsync(async (req, res) => {
+  connect();
+  res.status(200).json({
+    status: "success",
+    data: null,
+  });
+});
+
+
+
 module.exports = {
   userSignup,
   userLogin,
   protect,
+  userLogout
 };
